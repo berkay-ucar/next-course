@@ -30,7 +30,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <main className="p-5">{children}</main>
+        <main className="p-5">
+          {/* <Suspense fallback={<p>Loading..</p>}>{children}</Suspense> */}
+          {children}
+        </main>
       </body>
     </html>
   );

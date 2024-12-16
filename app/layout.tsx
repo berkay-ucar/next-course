@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./Navbar";
+import AuthProvider from "./auth/Provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,11 +30,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        <main className="p-5">
-          {/* <Suspense fallback={<p>Loading..</p>}>{children}</Suspense> */}
-          {children}
-        </main>
+        <AuthProvider>
+          <Navbar />
+          <main className="p-5">
+            {/* <Suspense fallback={<p>Loading..</p>}>{children}</Suspense> */}
+            {children}
+          </main>
+        </AuthProvider>
       </body>
     </html>
   );

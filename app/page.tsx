@@ -16,9 +16,11 @@ export default async function Home() {
   // );
 
   return (
-    <main className="relative h-screen">
-      {/* <Image src={coffee} alt="coffee"></Image> */}
-      <Image
+    <>
+      <h1>Hello World</h1>
+      <main className="relative h-screen">
+        {/* <Image src={coffee} alt="coffee"></Image> */}
+        {/* <Image
         src="https://bit.ly/react-cover"
         alt="coffee"
         fill
@@ -26,7 +28,8 @@ export default async function Home() {
         sizes="(max-width:480px) 100vw, (max-width:768px) 50vw, 33vw"
         quality={100} //75
         priority
-      ></Image>
-    </main>
+      ></Image> */}
+      </main>
+    </>
   );
 }

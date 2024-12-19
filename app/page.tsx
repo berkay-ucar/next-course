@@ -17,7 +17,13 @@ export default async function Home() {
 
   return (
     <main>
-      <Image src={coffee} alt="coffee"></Image>
+      {/* <Image src={coffee} alt="coffee"></Image> */}
+      <Image
+        src="https://bit.ly/react-cover"
+        alt="coffee"
+        width={300}
+        height={170}
+      ></Image>
     </main>
   );
 }

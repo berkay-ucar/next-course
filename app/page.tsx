@@ -21,8 +21,9 @@ export default async function Home() {
       <Image
         src="https://bit.ly/react-cover"
         alt="coffee"
-        width={300}
-        height={170}
+        fill
+        className="object-cover"
+        sizes="100vw"
       ></Image>
     </main>
   );

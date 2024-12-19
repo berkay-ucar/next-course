@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./Navbar";
 import AuthProvider from "./auth/Provider";
+import Script from "next/script";
+import GoogleAnalyticsScript from "./GoogleAnalyticsScript";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,6 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="cupcake">
+      <GoogleAnalyticsScript />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

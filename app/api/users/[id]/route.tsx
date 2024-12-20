@@ -45,10 +45,8 @@ export async function PUT(
   return NextResponse.json(updatedUser);
 }
 
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(request: NextRequest, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const user = await prisma.user.findUnique({
     where: { id: params.id },
   });

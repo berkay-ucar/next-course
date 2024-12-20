@@ -1,11 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import ProductCard from "./components/ProductCard/ProductCard";
-import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
-import Image from "next/image";
-import coffee from "@/public/images/coffee.jpg";
 import HeavyComponent from "./components/HeavyComponent";
 
 export default function Home() {

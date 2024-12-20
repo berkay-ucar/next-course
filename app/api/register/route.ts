@@ -1,9 +1,7 @@
 import prisma from "@/prisma/client";
-import { error } from "console";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import bcyrpt from "bcrypt";
-import Email from "next-auth/providers/email";
 
 const schema = z.object({
   email: z.string().email(),

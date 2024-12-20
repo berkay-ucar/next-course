@@ -23,7 +23,7 @@ const UploadPage = () => {
       <CldUploadWidget
         uploadPreset="ml_default"
         //options={{ sources: ["local"] }}
-        onSuccess={(result, widget) => {
+        onSuccess={(result) => {
           if (result.event !== "success") return;
           const info = result.info as CloudinaryResult;
           setPublicId(info.public_id);

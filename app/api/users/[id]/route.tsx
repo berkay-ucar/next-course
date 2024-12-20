@@ -4,10 +4,10 @@ import prisma from "@/prisma/client";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const user = await prisma.user.findUnique({
-    where: { id: parseInt(params.id) },
+    where: { id: (await params).id },
   });
 
   if (!user)
@@ -18,16 +18,17 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const body = await request.json();
   const validation = schema.safeParse(body);
-
   if (!validation.success)
-    return NextResponse.json(validation.error.errors, { status: 400 });
+    return NextResponse.json(validation.error.errors, {
+      status: 400,
+    });
 
   const user = await prisma.user.findUnique({
-    where: { id: parseInt(params.id) },
+    where: { id: (await params).id },
   });
 
   if (!user)
@@ -49,7 +50,7 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   const user = await prisma.user.findUnique({
-    where: { id: parseInt(params.id) },
+    where: { id: params.id },
   });
 
   if (!user)

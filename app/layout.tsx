@@ -3,16 +3,15 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./Navbar";
 import AuthProvider from "./auth/Provider";
-import Script from "next/script";
+
 import GoogleAnalyticsScript from "./GoogleAnalyticsScript";
-import { Inter, Roboto } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-});
+// const roboto = Roboto({
+//   subsets: ["latin"],
+//   weight: ["400", "500"],
+// });
 
 const poppins = localFont({
   src: "../public/fonts/poppins-regular-webfont.woff2",

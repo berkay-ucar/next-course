@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const HeavyComponent = () => {
-  return (
-    <div>My Heavy Component</div>
-  )
-}
+  return <div>My Heavy Component</div>;
+};
 
-export default HeavyComponent
+export default HeavyComponent;
